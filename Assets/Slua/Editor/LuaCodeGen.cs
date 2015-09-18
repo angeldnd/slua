@@ -225,7 +225,7 @@ namespace SLua
 			}
 			
 			CustomExport.OnAddCustomClass(fun);
-            /* yjpark changes begin
+            /* yjpark changes begin */
             angeldnd.editor.dap.lua.CustomExport.OnAddCustomClass(fun);
             /* yjpark changes end */
 			
