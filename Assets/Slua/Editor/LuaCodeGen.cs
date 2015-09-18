@@ -225,6 +225,9 @@ namespace SLua
 			}
 			
 			CustomExport.OnAddCustomClass(fun);
+            /* yjpark changes begin
+            angeldnd.editor.dap.lua.CustomExport.OnAddCustomClass(fun);
+            /* yjpark changes end */
 			
 			GenerateBind(exports, "BindCustom", 3,path);
             if(autoRefresh)
