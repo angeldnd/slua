@@ -1200,6 +1200,11 @@ namespace SLua
 		ConstructorInfo[] GetValidConstructor(Type t)
 		{
 			List<ConstructorInfo> ret = new List<ConstructorInfo>();
+            /* yjpark changes begin
+			if (t.GetConstructor(Type.EmptyTypes) == null || t.IsAbstract)
+            */
+			if (t.GetConstructor(Type.EmptyTypes) == null && t.IsAbstract)
+            /* yjpark changes end */
 			if (t.GetConstructor(Type.EmptyTypes) == null || t.IsAbstract)
 				return ret.ToArray();
 			if (t.BaseType != null && t.BaseType.Name == "MonoBehaviour")
