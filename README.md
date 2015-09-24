@@ -77,7 +77,7 @@ click Custom->Make, generate custom class interface for lua
 
 Clear custom, delete all generated custom interface
 
-Slua/LuaObject contain pre-generated file for exported interface.
+_Slua_LuaObject contain pre-generated file for exported interface.
 
 Precompiled slua library in Plugins only included x86(32bit)/macosx(32bit)/iOS(armv7,armv7s,arm64)/Android(armv7-a) platform using luajit, you should compile other platform/lua5.1/luajit by yourself, see build.txt for help.
 

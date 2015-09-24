@@ -1,0 +1,17 @@
+slua-root = "Assets/Standard Assets/_Slua"
+plugins-root = "Assets/Plugins"
+
+[dap-slua]
+[[dap-slua.folders]]
+from = "Assets/Slua/Script"
+to = "${slua-root}/_Script"
+[[dap-slua.folders]]
+from = "Assets/Slua/Editor"
+to = "${slua-root}/Editor"
+[[dap-slua.folders]]
+from = "Assets/Slua/Doc"
+to = "${slua-root}/_Doc"
+[[dap-slua.files]]
+from = "Assets/Slua/Plugins"
+to = "${plugins-root}/Plugins"
+pattern = "**/*"

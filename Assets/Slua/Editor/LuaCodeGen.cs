@@ -37,7 +37,7 @@ namespace SLua
 
     public class LuaCodeGen : MonoBehaviour
 	{
-        public const string Path = "Assets/Slua/LuaObject/";
+        public const string Path = "Assets/Standard Assets/_Slua_LuaObject/";
         public delegate void ExportGenericDelegate(Type t, string ns);
 		
         static bool autoRefresh = true;
