@@ -2,17 +2,17 @@ slua-root = "Assets/Standard Assets/_Slua"
 slua-editor-root = "Assets/Standard Assets/Editor"
 slua-plugins-root = "Assets/Plugins"
 
-[dap-slua]
-[[dap-slua.folders]]
+[ext-slua]
+[[ext-slua.folders]]
 from = "Assets/Slua/Script"
 to = "${slua-root}/_Script"
-[[dap-slua.folders]]
+[[ext-slua.folders]]
 from = "Assets/Slua/Editor"
 to = "${slua-editor-root}/_SluaEditor"
-[[dap-slua.folders]]
+[[ext-slua.folders]]
 from = "Assets/Slua/Doc"
 to = "${slua-root}/_Doc"
-[[dap-slua.files]]
+[[ext-slua.files]]
 from = "Assets/Plugins"
 to = "${slua-plugins-root}"
 include = "**/*"
