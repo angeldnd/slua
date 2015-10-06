@@ -13,22 +13,22 @@ include = "**/*"
 requires = [
     "ext-slua-plugins",
 ]
-[[ext-slua.folders]]
-from = "Assets/Slua/Script"
-to = "${slua-root}/_Script"
-[[ext-slua.folders]]
-from = "Assets/Slua/Editor"
-to = "${slua-editor-root}/_SluaEditor"
-[[ext-slua.folders]]
-from = "Assets/Slua/Doc"
-to = "${slua-root}/_Doc"
-
-[ext-slua-dll]
-requires = [
-    "ext-slua-plugins",
-]
-[[ext-slua-dll.files]]
+[[ext-slua.files]]
 from = "Releases/${slua-version}"
 to = "${slua-root}"
 include = "SLua.*"
+
+[ext-slua-src]
+requires = [
+    "ext-slua-plugins",
+]
+[[ext-slua-src.folders]]
+from = "Assets/Slua/Script"
+to = "${slua-root}/_Script"
+[[ext-slua-src.folders]]
+from = "Assets/Slua/Editor"
+to = "${slua-editor-root}/_SluaEditor"
+[[ext-slua-src.folders]]
+from = "Assets/Slua/Doc"
+to = "${slua-root}/_Doc"
 
