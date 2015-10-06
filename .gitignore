@@ -9,5 +9,5 @@ bin/
 /Assets/UnityVS.meta
 /Assets/Slua/LuaObject
 /ProjectSettings
-*.userpref
+*.userprefs
 

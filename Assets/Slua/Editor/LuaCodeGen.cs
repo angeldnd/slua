@@ -90,13 +90,8 @@ namespace SLua
 			List<string> uselist;
 			List<string> noUseList;
 			
-            /* yjpark changes begin
 			CustomExport.OnGetNoUseList(out noUseList);
 			CustomExport.OnGetUseList(out uselist);
-            */
-			angeldnd.editor.dap.lua.CustomExport.OnGetNoUseList(out noUseList);
-			angeldnd.editor.dap.lua.CustomExport.OnGetUseList(out uselist);
-            /* yjpark changes end */
 			
 			List<Type> exports = new List<Type>();
             string path = Path + "Unity/";
@@ -127,9 +122,9 @@ namespace SLua
                             }
                         }
                         if (partial) {
-                            angeldnd.dap.Log.Error("Slua Skipped By UseList: {0}", t.FullName);
+                            Debug.LogError(string.Format("Slua Skipped By UseList: {0}", t.FullName));
                         } else {
-                            angeldnd.dap.Log.Info("Slua Skipped By UseList: {0}", t.FullName);
+                            Debug.Log(string.Format("Slua Skipped By UseList: {0}", t.FullName));
                         }
                     }
                     /* yjpark changes end */
@@ -145,7 +140,7 @@ namespace SLua
 							break;
                         /* yjpark changes begin */
                         } else {
-                            angeldnd.dap.Log.Info("Slua Skipped By NoUseList: {0}", t.FullName);
+                            Debug.LogError(string.Format("Slua Skipped By NoUseList: {0}", t.FullName));
                         /* yjpark changes end */
 						}
 					}
@@ -251,9 +246,6 @@ namespace SLua
 			}
 			
 			CustomExport.OnAddCustomClass(fun);
-            /* yjpark changes begin */
-            angeldnd.editor.dap.lua.CustomExport.OnAddCustomClass(fun);
-            /* yjpark changes end */
 			
 			GenerateBind(exports, "BindCustom", 3,path);
             if(autoRefresh)

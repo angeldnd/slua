@@ -25,6 +25,14 @@ namespace SLua
 	using System.Collections.Generic;
 	using System;
 
+    /* yjpark changes begin */
+    using angeldnd.dap;
+    using angeldnd.dap.util;
+    using angeldnd.dap.unity;
+    using angeldnd.dap.unity.util;
+    using angeldnd.dap.lua;
+    /* yjpark changes end */
+
 	public class CustomExport
 	{
 
@@ -40,6 +48,70 @@ namespace SLua
 			// add( type, typename)
 			// type is what you want to export
 			// typename used for simplify generic type name or rename, like List<int> named to "ListInt", if not a generic type keep typename as null or rename as new type name
+            /* yjpark changes begin */
+            // DapCore
+            add(typeof(Pass), null);
+            add(typeof(Data), null);
+            add(typeof(EventChecker), null);
+            add(typeof(EventListener), null);
+            add(typeof(RequestChecker), null);
+            add(typeof(RequestListener), null);
+            add(typeof(ResponseListener), null);
+            add(typeof(RequestHandler), null);
+            add(typeof(BlockEventChecker), null);
+            add(typeof(BlockEventListener), null);
+            add(typeof(BlockRequestChecker), null);
+            add(typeof(BlockRequestListener), null);
+            add(typeof(BlockResponseListener), null);
+            add(typeof(BlockRequestHandler), null);
+            add(typeof(Handler), null);
+            add(typeof(Handlers), null);
+            add(typeof(Channel), null);
+            add(typeof(Channels), null);
+            add(typeof(Entity), null);
+            add(typeof(Context), null);
+            add(typeof(Item), null);
+            add(typeof(Registry), null);
+            add(typeof(Properties), null);
+            add(typeof(BoolProperty), null);
+            add(typeof(BoolBlockValueChecker), null);
+            add(typeof(BoolBlockValueWatcher), null);
+
+            //SILP:EXPORT_PROPERTY(Bool)
+            add(typeof(BoolProperty), null);                          //__SILP__
+            add(typeof(BoolBlockValueChecker), null);                 //__SILP__
+            add(typeof(BoolBlockValueWatcher), null);                 //__SILP__
+            //SILP:EXPORT_PROPERTY(Int)
+            add(typeof(IntProperty), null);                           //__SILP__
+            add(typeof(IntBlockValueChecker), null);                  //__SILP__
+            add(typeof(IntBlockValueWatcher), null);                  //__SILP__
+            //SILP:EXPORT_PROPERTY(Long)
+            add(typeof(LongProperty), null);                          //__SILP__
+            add(typeof(LongBlockValueChecker), null);                 //__SILP__
+            add(typeof(LongBlockValueWatcher), null);                 //__SILP__
+            //SILP:EXPORT_PROPERTY(Float)
+            add(typeof(FloatProperty), null);                         //__SILP__
+            add(typeof(FloatBlockValueChecker), null);                //__SILP__
+            add(typeof(FloatBlockValueWatcher), null);                //__SILP__
+            //SILP:EXPORT_PROPERTY(Double)
+            add(typeof(DoubleProperty), null);                        //__SILP__
+            add(typeof(DoubleBlockValueChecker), null);               //__SILP__
+            add(typeof(DoubleBlockValueWatcher), null);               //__SILP__
+            //SILP:EXPORT_PROPERTY(String)
+            add(typeof(StringProperty), null);                        //__SILP__
+            add(typeof(StringBlockValueChecker), null);               //__SILP__
+            add(typeof(StringBlockValueWatcher), null);               //__SILP__
+            //SILP:EXPORT_PROPERTY(Data)
+            add(typeof(DataProperty), null);                          //__SILP__
+            add(typeof(DataBlockValueChecker), null);                 //__SILP__
+            add(typeof(DataBlockValueWatcher), null);                 //__SILP__
+
+            add(typeof(ResponseHelper), null);
+
+            // DapLua
+            add(typeof(LuaHelper), null);
+
+            /* yjpark changes end */
 		}
 
 		public static void OnAddCustomAssembly(ref List<string> list)
@@ -54,9 +126,26 @@ namespace SLua
 		// if uselist return a white list, don't check noUseList(black list) again
 		public static void OnGetUseList(out List<string> list)
 		{
+            /* yjpark changes begin
 			list = new List<string>
 			{
 			};
+            */
+            list = new List<string>();
+
+            List<string> names = new List<string> {
+                "Object", "GameObject",
+                "Behaviour", "MonoBehaviour",
+                "Vector2", "Vector3", "Vector4",
+                "Color",
+                "Rect",
+                "Random",
+            };
+
+            foreach (var name in names) {
+                list.Add("UnityEngine." + name);
+            }
+            /* yjpark changes end */
 		}
 
 		// black list if white list not given
