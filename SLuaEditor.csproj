@@ -38,16 +38,16 @@
       <HintPath>..\Unity\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="DapCore">
-      <HintPath>..\..\Releases\Latest\DapCore.dll</HintPath>
+      <HintPath>..\..\Includes\dap.core.csharp\Scripts\bin\Debug\DapCore.dll</HintPath>
     </Reference>
     <Reference Include="DapUnity">
-      <HintPath>..\..\Releases\Latest\DapUnity.dll</HintPath>
+      <HintPath>..\..\Scripts\bin\Debug\DapUnity.dll</HintPath>
     </Reference>
     <Reference Include="DapLua">
-      <HintPath>..\..\Releases\Latest\DapLua.dll</HintPath>
+      <HintPath>..\..\Scripts\bin\Debug\DapLua.dll</HintPath>
     </Reference>
     <Reference Include="DapLib">
-      <HintPath>..\..\Releases\Latest\DapLib.dll</HintPath>
+      <HintPath>..\..\Scripts\bin\Debug\DapLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
