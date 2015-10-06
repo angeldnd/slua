@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{93603B70-6CB4-4680-877C-AE6EE6F96246}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>slua</RootNamespace>
+    <AssemblyName>SLua</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\Unity\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Script\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Slua\Script\Coroutine.cs">
+      <Link>Script\Coroutine.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\Helper.cs">
+      <Link>Script\Helper.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\LuaDLL.cs">
+      <Link>Script\LuaDLL.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\LuaDLLWrapper.cs">
+      <Link>Script\LuaDLLWrapper.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\LuaObject.cs">
+      <Link>Script\LuaObject.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\LuaObject_overload.cs">
+      <Link>Script\LuaObject_overload.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\LuaState.cs">
+      <Link>Script\LuaState.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\LuaSvr.cs">
+      <Link>Script\LuaSvr.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\LuaSvrGameObject.cs">
+      <Link>Script\LuaSvrGameObject.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\LuaValueType.cs">
+      <Link>Script\LuaValueType.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\LuaVarObject.cs">
+      <Link>Script\LuaVarObject.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\ObjectCache.cs">
+      <Link>Script\ObjectCache.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\SLuaDebug.cs">
+      <Link>Script\SLuaDebug.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\Timer.cs">
+      <Link>Script\Timer.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Script\WeakDictionary.cs">
+      <Link>Script\WeakDictionary.cs</Link>
+    </Compile>
+  </ItemGroup>
+</Project>

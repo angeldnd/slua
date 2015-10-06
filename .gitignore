@@ -4,6 +4,7 @@ Temp
 UnityVS
 AssetStoreTools
 obj/*
+bin/
 /Assets/AssetStoreTools.meta
 /Assets/UnityVS.meta
 /Assets/Slua/LuaObject
