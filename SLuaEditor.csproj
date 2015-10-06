@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C19E0A7B-331B-426A-A827-0E253A36F7BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SLuaEditor</RootNamespace>
+    <AssemblyName>SLuaEditor</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\Unity\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>..\Unity\UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Editor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Slua\Editor\CustomExport.cs">
+      <Link>Editor\CustomExport.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Editor\LuaCodeGen.cs">
+      <Link>Editor\LuaCodeGen.cs</Link>
+    </Compile>
+    <Compile Include="Assets\Slua\Editor\LuaConsole.cs">
+      <Link>Editor\LuaConsole.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="SLua.csproj">
+      <Project>{93603B70-6CB4-4680-877C-AE6EE6F96246}</Project>
+      <Name>SLua</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

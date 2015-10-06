@@ -9,4 +9,5 @@ bin/
 /Assets/UnityVS.meta
 /Assets/Slua/LuaObject
 /ProjectSettings
-/*.csproj
+*.userpref
+
