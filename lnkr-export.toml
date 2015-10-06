@@ -1,8 +1,18 @@
 slua-root = "Assets/Standard Assets/_Slua"
 slua-editor-root = "Assets/Standard Assets/Editor"
 slua-plugins-root = "Assets/Plugins"
+slua-version = "Latest"
+
+[ext-slua-plugins]
+[[ext-slua-plugins.files]]
+from = "Assets/Plugins"
+to = "${slua-plugins-root}"
+include = "**/*"
 
 [ext-slua]
+requires = [
+    "ext-slua-plugins",
+]
 [[ext-slua.folders]]
 from = "Assets/Slua/Script"
 to = "${slua-root}/_Script"
@@ -12,7 +22,13 @@ to = "${slua-editor-root}/_SluaEditor"
 [[ext-slua.folders]]
 from = "Assets/Slua/Doc"
 to = "${slua-root}/_Doc"
-[[ext-slua.files]]
-from = "Assets/Plugins"
-to = "${slua-plugins-root}"
-include = "**/*"
+
+[ext-slua-dll]
+requires = [
+    "ext-slua-plugins",
+]
+[[ext-slua-dll.files]]
+from = "Releases/${slua-version}"
+to = "${slua-root}"
+include = "SLua.*"
+
