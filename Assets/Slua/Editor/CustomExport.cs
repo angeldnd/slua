@@ -123,12 +123,21 @@ namespace SLua
 			//list.Add("NGUI");
 		}
 
+		public static HashSet<string> OnAddCustomNamespace()
+		{
+			return new HashSet<string>
+			{
+				//"NLuaTest.Mock"
+			};
+		}
+
 		// if uselist return a white list, don't check noUseList(black list) again
 		public static void OnGetUseList(out List<string> list)
 		{
             /* yjpark changes begin
 			list = new List<string>
 			{
+				//"UnityEngine.GameObject",
 			};
             */
             list = new List<string>();
@@ -222,6 +231,10 @@ namespace SLua
 			"Ping",
             "ShaderVariantCollection",
 			"SimpleJson.Reflection",
+			"CoroutineTween",
+			"GraphicRebuildTracker",
+            "Advertisements",
+            "UnityEditor",
         };
 		}
 
